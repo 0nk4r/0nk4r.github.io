@@ -3,216 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onkark</title>
+    <title>Security Engineering Portfolio</title>
     <style>
         :root {
             --main-color: #2b2b2b;
-            --accent-color: #1a5f7a;
+            --accent-color: #1e4d40;
             --bg-color: #fafafa;
-            --link-color: #234f66;
+            --link-color: #2c614d;
             --secondary-color: #666;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+            font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, serif;
             line-height: 1.6;
             color: var(--main-color);
             background-color: var(--bg-color);
-            max-width: 760px;
-            margin: 0 auto;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            max-width: 650px;
             padding: 2rem;
         }
-
-        .header {
-            margin: 3rem 0 4rem;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 2rem;
-        }
-
         .title {
             font-size: 2.5rem;
             font-weight: normal;
             letter-spacing: -0.03em;
             margin-bottom: 1rem;
         }
-
         .subtitle {
             font-style: italic;
             color: var(--secondary-color);
             font-size: 1.2rem;
+            margin-bottom: 2rem;
         }
-
-        .nav {
-            margin: 2rem 0;
+        .brief {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--main-color);
         }
-
-        .nav a {
+        .links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .section-link {
             color: var(--link-color);
             text-decoration: none;
-            margin-right: 2rem;
             font-size: 1.1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .section-link:hover {
+            border-bottom-color: var(--link-color);
+            padding-left: 0.5rem;
+        }
+        .contact {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+        .contact a {
+            color: var(--link-color);
+            text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.3s ease;
         }
-
-        .nav a:hover {
+        .contact a:hover {
             border-bottom-color: var(--link-color);
         }
-
-        .section {
-            margin: 4rem 0;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: normal;
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .writing-item {
-            margin-bottom: 2rem;
-        }
-
-        .writing-title {
-            font-size: 1.2rem;
-            color: var(--link-color);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .writing-title:hover {
-            text-decoration: underline;
-        }
-
-        .writing-excerpt {
-            color: var(--secondary-color);
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .date {
-            font-size: 0.9rem;
-            color: var(--secondary-color);
-            font-style: italic;
-        }
-
-        .project {
-            margin-bottom: 2.5rem;
-        }
-
-        .project-title {
-            font-size: 1.2rem;
-            color: var(--main-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .project-description {
-            color: var(--secondary-color);
-            font-size: 1.1rem;
-        }
-
-        .quote {
-            font-style: italic;
-            font-size: 1.2rem;
-            color: var(--accent-color);
-            margin: 2rem 0;
-            padding-left: 2rem;
-            border-left: 3px solid var(--accent-color);
-        }
-
-        .footer {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid #ddd;
-            color: var(--secondary-color);
-            font-size: 0.9rem;
-        }
-
         @media (max-width: 600px) {
             body {
+                align-items: flex-start;
+                padding-top: 2rem;
+            }
+            .container {
                 padding: 1rem;
             }
-
-            .nav {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav a {
-                margin-right: 0;
-            }
-
             .title {
                 font-size: 2rem;
             }
         }
+        .quote {
+            font-style: italic;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 <body>
-    <header class="header">
+    <main class="container">
         <h1 class="title">Onkar Koli</h1>
-        <p class="subtitle">Computer Science & Security</p>
+        <p class="subtitle">Security Engineer & Cybersecurity Specialist</p>
+
+        <div class="quote">"We can only see a short distance ahead, but we can see plenty there that needs to be done."</div>
         
-        <nav class="nav">
-            <a href="#about">About</a>
-            <a href="#writings">Blog</a>
-            <a href="#research">Talks</a>
-            <a href="#projects">Projects</a>
+        <p class="brief">
+            I specialize in designing and implementing robust security solutions, conducting penetration testing, and developing security frameworks.
+        </p>
+        <nav class="links">
+            <a href="/projects" class="section-link">Projects →</a>
+            <a href="/research" class="section-link">Research →</a>
+            <a href="/blog" class="section-link">Blog →</a>
         </nav>
-    </header>
-
-    <main>
-        <blockquote class="quote">
-            "We can only see a short distance ahead, but we can see plenty there that needs to be done."
-        </blockquote>
-
-        <section class="section" id="about">
-            <h2 class="section-title">About</h2>
-            <p>I am a Security Engineer</p>
-        </section>
-
-        <section class="section" id="writings">
-            <h2 class="section-title">Recent Writings</h2>
-            
-            <article class="writing-item">
-                <a href="#" class="writing-title">On Computable Numbers</a>
-                <p class="writing-excerpt">An exploration of the entscheidungsproblem through automatic machines.</p>
-                <time class="date">June 1936</time>
-            </article>
-
-            <article class="writing-item">
-                <a href="#" class="writing-title">Computing Machinery and Intelligence</a>
-                <p class="writing-excerpt">Can machines think? A proposed method for evaluating machine intelligence.</p>
-                <time class="date">October 1950</time>
-            </article>
-        </section>
-
-        <section class="section" id="projects">
-            <h2 class="section-title">Current Projects</h2>
-            
-            <div class="project">
-                <h3 class="project-title">The Turing Machine</h3>
-                <p class="project-description">A theoretical computing model capable of simulating the logic of any computer algorithm.</p>
-            </div>
-
-            <div class="project">
-                <h3 class="project-title">Pattern Formation in Nature</h3>
-                <p class="project-description">Mathematical investigation of biological pattern formation through reaction-diffusion systems.</p>
-            </div>
-        </section>
+        <p class="contact">
+            Contact: <a href="mailto:contact@onkark.com">contact@onkark.com</a><br>
+            Security Advisory Feed via <a href="/rss">RSS</a>
+        </p>
     </main>
-
-    <footer class="footer">
-        <p>Correspondence welcome at a.turing@manchester.ac.uk</p>
-    </footer>
 </body>
 </html>
