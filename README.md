@@ -1,3 +1,1 @@
-# Blog link:
-
- 0nk4r.github.io
+dawedsdfi1j3hqrtgroe9poijkln3ehbrfyguhiosklm23j4uri5t9opklm1    jn2e3qbhwrfuioeaklmnWEDIWAFO !
