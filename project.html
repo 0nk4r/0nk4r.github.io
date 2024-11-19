@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Onkar Koli</title>
+    <style>
+        :root {
+            --main-color: #2b2b2b;
+            --accent-color: #1e4d40;
+            --bg-color: #fafafa;
+            --link-color: #2c614d;
+            --secondary-color: #666;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, serif;
+            line-height: 1.6;
+            color: var(--main-color);
+            background-color: var(--bg-color);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: normal;
+            letter-spacing: -0.03em;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+        .project {
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--accent-color);
+        }
+        .project-title {
+            font-size: 1.4rem;
+            color: var(--link-color);
+            margin-bottom: 0.5rem;
+        }
+        .project-description {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .tag {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+        }
+        .back-link {
+            display: block;
+            margin-top: 2rem;
+            color: var(--link-color);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1 class="section-title">Security Projects</h1>
+        
+        <div class="project">
+            <h2 class="project-title">Advanced Network Intrusion Detection System</h2>
+            <p class="project-description">Developed a machine learning-powered network monitoring tool that identifies and mitigates advanced persistent threats with 95% accuracy.</p>
+            <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Network Security</span>
+            </div>
+        </div>
+
+        <div class="project">
+            <h2 class="project-title">Zero Trust Architecture Implementation</h2>
+            <p class="project-description">Designed and implemented a comprehensive zero trust security model for a multinational enterprise, reducing unauthorized access attempts by 78%.</p>
+            <div class="project-tags">
+                <span class="tag">Cloud Security</span>
+                <span class="tag">Identity Management</span>
+                <span class="tag">Zero Trust</span>
+            </div>
+        </div>
+
+        <div class="project">
+            <h2 class="project-title">Secure Code Review Automation</h2>
+            <p class="project-description">Created an automated static code analysis tool that identifies security vulnerabilities across multiple programming languages with minimal false positives.</p>
+            <div class="project-tags">
+                <span class="tag">Static Analysis</span>
+                <span class="tag">DevSecOps</span>
+                <span class="tag">Security Automation</span>
+            </div>
+        </div>
+
+        <a href="/" class="back-link">← Back to Portfolio</a>
+    </main>
+</body>
+</html>
