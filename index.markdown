@@ -3,7 +3,7 @@ layout: default
 title: About
 ---
 
-Security isn’t just about defense—it’s about understanding the unknown. I explore the art of breaking and securing, questioning assumptions, and pushing boundaries. This blog is a reflection of that journey.
+ I explore the art of breaking and securing things, questioning assumptions, and pushing boundaries. This blog is a reflection of that journey.
 
 <figure>
   <picture>

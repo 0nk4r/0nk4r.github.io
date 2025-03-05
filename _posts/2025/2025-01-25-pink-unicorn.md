@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pink Unicorn
+title: Let's start again with Deserialization
 date: 2025-01-25 15:35 -0700
 last_modified_at: 2025-02-02 07:58:45 +0000
 tags: [Photos]
