@@ -52,11 +52,6 @@ jekyll_compose:
       tags:
       published: true
 
-# TODO: Uncomment this when https://github.com/jekyll/jekyll-feed/pull/321 is merged
-# feed:
-#   tags:
-#     except:
-#       - "Captain's log"
 
 author: 
   name: Onkar Koli
