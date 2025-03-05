@@ -11,11 +11,11 @@
     --c-light-link-text: #1e4d40;
 
     /* Dark theme */
-    --c-dark-text: #ddd;
-    --c-dark-background: #212121;
-    --c-dark-secondary-background: #252525;
-    --c-dark-focus: #555;
-    --c-dark-link-text: #1e4d40;
+    --c-light-text: #333;
+    --c-light-background: #fdfdfd;
+    --c-light-secondary-background: #f8f8f8;
+    --c-light-focus: #f0f8ff;
+    --c-light-link-text: #1e4d40;
 }
 
 :root {
@@ -27,7 +27,7 @@
 }
 
 /* Override default theme with dark theme */
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
     :root {
         --c-text: var(--c-dark-text);
         --c-link-text: var(--c-dark-link-text);
