@@ -1,0 +1,191 @@
+# Site settings
+
+title: "Chenna Kautilya ~ /home/hashb"
+title_body: '/home/hashb'
+description: 'Chenna Kautilya | Makes Robots Move'
+name: 'Chenna Kautilya''s home on the Internet'
+
+baseurl: ''  # the subpath of your site, e.g. /blog
+url: 'https://chenna.me'  # the base hostname & protocol for your site
+repo_url: 'https://github.com/hashb/chenna.me'
+
+timezone: UTC
+
+paginate: 4
+paginate_path: '/blog/page:num/'
+permalink: '/blog/:year/:month/:day/:title/'
+
+excerpt_separator: <!-- more -->
+
+collections:
+  projects:
+    output: true
+    permalink: '/work/:year/:month/:title/'
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+gfm_quirks: paragraph_end
+
+future: true
+jailed: false
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jemoji
+  - jekyll-feed
+  - jekyll-redirect-from
+
+# remote_theme: hashb/california
+incremental: false
+
+jekyll_compose:
+  default_front_matter:
+    posts:
+      last_modified_at:
+      tags:
+      published: true
+
+# TODO: Uncomment this when https://github.com/jekyll/jekyll-feed/pull/321 is merged
+# feed:
+#   tags:
+#     except:
+#       - "Captain's log"
+
+author: 
+  name: Chenna Kautilya
+  rss: true
+  mail: hi@chenna.me
+  twitter: kautilyach
+  github: hashb
+  youtube: kautilyach
+  linkedin: kautilyach
+
+# Social
+twitter_username: 'kautilyach'
+github_username:  'hashb'
+linkedin_username: 'kautilyach'
+
+twitter:
+  username: kautilyach
+
+social:
+  name: Chenna Kautilya
+  links:
+    - https://twitter.com/kautilyach
+    - https://www.linkedin.com/in/kautilyach
+    - https://github.com/hashb
+    - https://keybase.io/hashb
+
+port: 4000
+
+prose:
+  rooturl: '_posts'
+  siteurl: 'https://chenna.me/'
+  media: 'assets/uploads'
+  ignore:
+    - index.html
+    - _config.yml
+    - /_layouts
+    - /_includes
+    - /_plugins
+    - /_sass
+  metadata:
+    _posts:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "post"
+      - name: "title"
+        field:
+          element: "text"
+          value: ""
+      - name: "tags"
+        field:
+          element: "multiselect"
+          label: "Tags"
+          value: ""
+          alterable: true
+          options:
+            - name: "Community"
+              value: "Community"
+            - name: "Data"
+              value: "Data"
+            - name: "Design"
+              value: "Design"
+            - name: "Docker"
+              value: "Docker"
+            - name: "Documentation"
+              value: "Documentation"
+            - name: "How To"
+              value: "How To"
+            - name: "Kaggle"
+              value: "Kaggle"
+            - name: "Link"
+              value: "Link"
+            - name: "Linux"
+              value: "Linux"
+            - name: "Machine Learning"
+              value: "Machine Learning"
+            - name: "Maths"
+              value: "Maths"
+            - name: "Optimization"
+              value: "Optimization"
+            - name: "Photos"
+              value: "Photos"
+            - name: "Productivity"
+              value: "Productivity"
+            - name: "Puzzles"
+              value: "Puzzles"
+            - name: "Python"
+              value: "Python"
+            - name: "Random"
+              value: "Random"
+            - name: "Realtime"
+              value: "Realtime"
+            - name: "Robotics"
+              value: "Robotics"
+            - name: "Rust"
+              value: "Rust"
+            - name: "Slice of Life"
+              value: "Slice of Life"
+            - name: "Strava"
+              value: "Strava"
+            - name: "Systems"
+              value: "Systems"
+            - name: "Tech"
+              value: "Tech"
+            - name: "TIL"
+              value: "TIL"
+            - name: "Tools"
+              value: "Tools"
+            - name: "Weekly"
+              value: "Weekly"
+            - name: "Windows"
+              value: "Windows"
+      - name: "date"
+        field:
+          element: "text"
+          label: "Date (YYYY-MM-DD HH:MM:SS)"
+          value: CURRENT_DATETIME
+      - name: "last_modified_at"
+        field:
+          element: "text"
+          label: "Date (YYYY-MM-DD HH:MM:SS)"
+          value: CURRENT_DATETIME
+      - name: "published"
+        field:
+          element: "checkbox"
+          label: "Published"
+          value: true
+      - name: "external-url"
+        field:
+          element: "text"
+          label: "Link"
+          value: ""

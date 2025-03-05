@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<h1>Tags</h1>
+
+{{ content }}
+
+{% assign rawtags = "" %}
+{% for post in site.posts %}
+  {% assign ttags = post.tags | join:'|' | append:'|' %}
+  {% assign rawtags = rawtags | append:ttags %}
+{% endfor %}
+{% assign rawtags = rawtags | split:'|' | sort %}
+
+{% assign tags = "" %}
+{% for tag in rawtags %}
+  {% assign tag_downcase = tag | downcase %}
+  {% if tag_downcase != "" %}
+    {% if tags == "" %}
+      {% assign tags = tag_downcase | split:'|' %}
+    {% endif %}
+    {% unless tags contains tag_downcase %}
+      {% assign tags = tags | join:'|' | append:'|' | append:tag_downcase | split:'|' | sort_natural %}
+    {% endunless %}
+  {% endif %}
+{% endfor %}
+
+
+{% for tag in tags %}
+{% if tag == "captain's log" %}
+  {% continue %}
+{% endif %}
+<div class="archive-item">
+  <h2 id="{{ tag | slugify }}">{{ tag }}</h2>
+  <ul>
+   {% for post in site.posts %}
+      {% assign lowercaseTags = post.tags | join: ',' | downcase | split: ',' %}
+      {% if lowercaseTags contains tag %}
+      <li>
+      <p>
+        <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%d %b %Y" }}</time>&nbsp;&nbsp;
+        <a href="{{ post.url | relative_url }}" title="{{ post.excerpt | strip_html | strip }}">
+          {% include title_emoji.html %}
+        </a>
+      </p>
+    </li>
+     {% endif %}
+   {% endfor %}
+  </ul>
+</div>
+{% endfor %}

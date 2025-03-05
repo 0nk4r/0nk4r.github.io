@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link href="/assets/css/style.css" rel="stylesheet" />
+  <!-- bing verify -->
+  <meta name="msvalidate.01" content="A91A3D6480BA119D7D8EAF3E5E1E8FB1" />
+</head>
+
+<body>
+  <header id="header">
+    <em><a href="/">{{ site.title_body }}</a></em>
+    <p style="margin: -1em 0 2em;">{{ site.description }}</p>
+    {% assign current = page.url | downcase | split: '/' %}
+    <nav>
+      <ul>
+        <li><a href="/" {% if current.size==0 %}data-current="current item" {% endif %}>home</a></li>
+        <li><a href="/blog/" {% if current[1]=='blog' %}data-current="current item" {% endif %}>blog</a></li>
+        <li><a href="/work/" {% if current[1]=='work' %}data-current="current item" {% endif %}>work</a></li>
+        <li><a href="/archives/" {% if current[1]=='archives' %}data-current="current item" {% endif %}>archive</a></li>
+        <li><a href="/feed.xml">rss</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <p>Under Maintenance</p>
+  </main>
+
+  <footer id="footer">
+    <small>
+      <p class="copyright">Copyright &copy; Chenna Kautilya, {{ site.time | date: '%Y' }}. Powered by <a
+          href="http://jekyllrb.com">Jekyll</a>,
+        <a href="https://github.com/hashb/california">California</a> theme.
+        <br>
+        The opinions on this site are my own and do not represent those of my employer.
+        <br>
+        This page was built from <a href="{{ site.repo_url }}/blob/master/{{ page.path }}">source</a> on {{site.time}}
+      </p>
+      <!-- <img src="/assets/images/by-nc-sa.svg"
+        alt="by-nc-sa;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License"
+        style="display: block; margin-left: auto; width: 5%;"> -->
+      <noscript>
+        hello stranger with no javascript ;)
+      </noscript>
+    </small>
+  </footer>
+
+</body>
+
+</html>

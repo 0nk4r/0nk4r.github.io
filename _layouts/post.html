@@ -1,0 +1,66 @@
+---
+layout: default
+---
+<article class="post">
+
+  {% if page.mathjax %}
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+  {% endif %}
+
+  <h1>{% include title_emoji.html %}</h1>
+  {% if page.external-url %}
+  <p class="meta"><span class="postdate">Link: <a href="{{ page.external-url }}">{{ page.external-url }}</a></span></p>
+  {% endif %}
+
+  {% include toc.html html=content class="toc" %}
+  <div class="post-content">{{ content }}</div>
+
+  <div class="post-footer">
+    <address>By
+      <a href="https://twitter.com/{{ site.author['twitter'] }}">{{ site.author["name"] }}</a>
+    </address>
+    <p class="meta">Posted on <span class="postdate"><time datetime="{{ page.date | date_to_xmlschema }}"
+          itemprop="datePublished">{{ page.date | date: "%b %d, %Y" }}</time>{% if page.last_modified_at %}
+        (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{
+          page.last_modified_at | date: "%b %d, %Y" }}</time>){% endif %}</span>
+    </p>
+    <p>{% for tag in page.tags %}<a href="/tags/#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% endfor %}</p>
+  </div>
+
+  <div class="post-comments">
+    <button id="open-comments-btn">Open Comments</button>
+    <div id="comments-container" style="display: none;"></div>
+  </div>
+</article>
+
+<script unsafe-inline integrity="sha256-H1Ahsgtjb6TlNfxgfa2BDEXjAsW3DVDFtaFyZFbyYl4=">
+  const openCommentsBtn = document.getElementById('open-comments-btn');
+  const commentsContainer = document.getElementById('comments-container');
+
+  openCommentsBtn.addEventListener('click', function() {
+    if (commentsContainer.style.display === 'none') {
+      commentsContainer.style.display = 'block';
+      openCommentsBtn.style.display = 'none';
+      loadGiscus();
+    } else {
+      commentsContainer.style.display = 'none';
+      openCommentsBtn.style.display = 'block';
+    }
+  });
+
+  function loadGiscus() {
+    var script = document.createElement('script');
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute("data-repo", "hashb/chenna.me");
+    script.setAttribute("data-repo-id", "MDEwOlJlcG9zaXRvcnkxMjY2NzEzNQ==");
+    script.setAttribute("data-category", "General");
+    script.setAttribute("data-category-id", "DIC_kwDOAMFI_84B_Mgr");
+    script.setAttribute("data-mapping", "title");
+    script.setAttribute("data-reactions-enabled", "1");
+    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-theme", "preferred_color_scheme");
+    script.setAttribute("crossorigin", "anonymous");
+    script.async = true;
+    document.getElementById('comments-container').appendChild(script);
+  }
+</script>

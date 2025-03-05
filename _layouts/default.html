@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" as="style" href="/assets/css/style.css" rel="stylesheet" />
+  <link href="/assets/css/style.css" rel="stylesheet" />
+
+  <meta name="theme-color" content="#fdfdfd" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#212121" media="(prefers-color-scheme: dark)">
+
+  <!-- bing verify -->
+  <meta name="msvalidate.01" content="A91A3D6480BA119D7D8EAF3E5E1E8FB1" />
+  <!-- umami analytics -->
+  <script defer src="https://umami.chenna.me/script.js" data-website-id="3ec6bdf1-7533-4e02-bd34-122ab82404a5"></script>
+  <!-- RSS feed metadata -->
+  {% feed_meta %}
+</head>
+
+<body>
+  <header id="header">
+    <p><em><a href="/" style="font-size: 1.5em; font-style: normal;">{{ site.title_body }}</a></em></p>
+    <p style="margin: -1em 0 2em;">{{ site.description }}</p>
+    {% assign current = page.url | downcase | split: '/' %}
+    <nav style="margin: -1em 0 2em;">
+      <ul>
+        <li><a href="/" {% if current.size==0 %}data-current="current item" {% endif %}>home</a></li>
+        <li><a href="/blog/" {% if current[1]=='blog' %}data-current="current item" {% endif %}>blog</a></li>
+        <li><a href="/work/" {% if current[1]=='work' %}data-current="current item" {% endif %}>work</a></li>
+        <li><a href="/photos/" {% if current[1]=='photos' %}data-current="current item" {% endif %}>photos</a></li>
+        <li><a href="/archives/" {% if current[1]=='archives' %}data-current="current item" {% endif %}>archive</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <!-- for some reason, small tag gets closed early when I put it inside footer -->
+  <small>
+    <footer id="footer">
+      <p class="copyright">Copyright &copy; Chenna Kautilya, 2011 - {{ site.time | date: '%Y' }}. Powered by <a
+          href="http://jekyllrb.com">Jekyll</a>,
+        <a href="https://github.com/hashb/california">California</a> theme
+        <br>
+        The opinions on this site are my own and do not represent those of my employer
+        <br>
+        This page was built from <a href="{{ site.repo_url }}/blob/master/{{ page.path }}">source</a> on {{site.time}}
+        <br>
+        <!-- <a href="/feed.xml"><img src="/assets/images/rss.svg" alt="rss | Subscribe" width="25px"></a> -->
+        <br>
+        <!-- handcrafted with <span style="color: red;">&hearts;</span> in San Francisco -->
+      </p>
+
+      <!-- <img src="/assets/images/by-nc-sa.svg"
+        alt="by-nc-sa;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License"
+        style="display: block; margin-left: auto; width: 5%;"> -->
+      <noscript>
+        hello stranger with no javascript ;)
+      </noscript>
+
+    </footer>
+  </small>
+</body>
+</html>

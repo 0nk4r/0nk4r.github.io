@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+{% for post in paginator.posts %}
+
+  <article class="post">
+
+    <h1><a href="{{ post.url }}">
+      {% include title_emoji.html %}
+    </a></h1>
+
+    <div class="post-content">
+      {% if post.content contains site.excerpt_separator %}
+        {{ post.excerpt }}
+        <p><a href="{{ post.url }}">~more></a></p>
+      {% else %}
+        {{ post.content }}
+      {% endif %}
+    </div>
+
+  </article>
+
+{% endfor %}
+ 
+
+
+{% if paginator.total_pages > 1 %}
+  <div class="postnavigation">
+
+    {% if paginator.previous_page %}
+      {% if paginator.page == 2 %}
+        <a class="prev left" href="/blog">&larr; Newer</a>
+      {% else %}
+        <a class="prev left" href="/blog/page{{paginator.previous_page}}/">&larr; Newer</a>
+      {% endif %}
+    {% else %}
+      <span class="nope left">&larr; Newer</span>
+    {% endif %}
+
+    <span class="pages">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+    {% if paginator.next_page %}
+      <a class="next right" href="/blog/page{{paginator.next_page}}/">Older &rarr;</a>
+    {% else %}
+      <span class="nope right">Older &rarr;</span>
+    {% endif %}
+
+  </div>
+{% endif %}

@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+{% for post in site.posts %}
+
+{% assign lowercaseTags = post.tags | join: ',' | downcase | split: ',' %}
+
+  {% if lowercaseTags contains "photos" or lowercaseTags contains "art" %}
+  <article class="post">
+
+    <div class="post-content">
+      <a href="{{ post.url }}">
+      {% if post.content contains site.excerpt_separator %}
+        {{ post.excerpt -}}
+      {% else %}
+        {{ post.content -}}
+      {% endif %}
+      </a>
+    </div>
+
+  </article>
+  {% endif %}
+
+{% endfor %}

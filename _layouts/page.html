@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+
+<article class="post">
+  {% include toc.html html=content class="toc" %}
+  <div class="post-content">{{ content }}</div>
+
+  <div class="post-footer">
+    <address>By
+      <a href="https://twitter.com/{{ site.author['twitter'] }}">{{ site.author["name"] }}</a>
+    </address>
+    <p class="meta">Posted on <span class="postdate"><time datetime="{{ page.date | date_to_xmlschema }}"
+          itemprop="datePublished">{{ page.date | date: "%b %d, %Y" }}</time>{% if page.last_modified_at %}
+        (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{
+          page.last_modified_at | date: "%b %d, %Y" }}</time>){% endif %}</span>
+    </p>
+    <p>
+      {% for tag in page.tags %}<a href="/tags/#{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% endfor %}
+    </p>
+  </div>
+</article>

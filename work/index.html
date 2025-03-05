@@ -1,0 +1,34 @@
+---
+layout: default
+title: Work
+---
+
+<p>Over the past few years, I have worked on Motion Planning for Robotic Arms,
+Real-Time Distributed Systems for Robot Control and SLAM and Path Planning for
+Autonomous Mobile Robots.</p>
+
+
+{% for project in site["projects"] %}
+
+  <article class="post">
+
+    {% if project.external-url %}
+      <h1>
+        <a href="{{ project.url }}">{{ project.title }}</a>
+        <a class="anchor" href="{{ project.external-url }}"><i class="icon-anchor">🔗</i></a>
+      </h1>
+    {% else %}
+      <h1><a href="{{ project.url }}">{{ project.title }}</a></h1>
+    {% endif %}
+
+    <div class="post-content">
+      {% if project.content contains site.excerpt_separator %}
+        {{ project.excerpt }}
+      {% else %}
+        {{ project.content }}
+      {% endif %}
+    </div>
+
+  </article>
+
+{% endfor %}

@@ -1,0 +1,27 @@
+{% capture image_path %}
+  {{ include.base_image_name }}
+{% endcapture %}
+
+{% assign url_prefix = "//i.chenna.me/photos/prod/opt/" %}
+{% assign image_path = url_prefix | append: include.base_image_name %}
+
+<img
+  src="{{ image_path }}-small.jpg"
+  srcset="{{ image_path }}-small.jpg 320w,
+               {{ image_path }}-medium.jpg 640w,
+               {{ image_path }}-large.jpg 1024w,
+               {{ image_path }}-xlarge.jpg 1920w"
+  sizes="(max-width: 320px) 320px,
+         (max-width: 640px) 640px,
+         (max-width: 1024px) 1024px,
+         1920px"
+  title="{{ include.alt }}"
+  alt="{{ include.alt }}"
+  width="{{ include.width }}"
+  height="100%"
+  loading="lazy"
+  decoding="async"
+  class="responsive-image"
+  loading="lazy"
+  style="width: 100%; height: auto;"
+/>

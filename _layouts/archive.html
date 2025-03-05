@@ -1,0 +1,90 @@
+---
+layout: default
+---
+
+<h1>Archives</h1>
+
+{{ content }}
+
+<h2>Pages</h2>
+
+<div class="archive-item">
+<ul>
+{% for p in site.pages %}
+    {% if p.tags contains 'page' %}
+        <li>
+            <a href="{{ p.url | relative_url }}" title="{{ p.title }}">{{ p.title }}</a>
+        </li>
+    {% endif %}
+{% endfor %}
+</ul>
+</div>
+
+
+<h2>Posts</h2>
+
+{% for post in site.posts %}
+{% unless post.next %}
+  
+  {% unless forloop.first %}
+    </div>
+  </div>
+  {% endunless %}
+
+  <div class="archive-item">
+    <h3>{{ post.date | date: '%Y' }}</h3>
+    <div class="archive-month">
+
+{% else %}
+
+{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+{% capture next_year %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+{% capture month %}{{ post.date | date: '%m' }}{% endcapture %}
+{% capture next_month %}{{ post.next.date | date: '%m' }}{% endcapture %}
+
+{% if year != next_year %}
+
+  {% unless forloop.first %}
+    </div>
+  </div>
+  {% endunless %}
+
+  <div class="archive-item">
+    <h3>{{ post.date | date: '%Y' }}</h3>
+    <div class="archive-month">
+
+{% endif %}
+{% endunless %}
+
+{% if month != next_month and year == next_year %}
+    </div>
+    <div class="archive-month">
+{% endif %}
+  {% if post.title contains "stardate" %}
+    {% continue %}
+  {% endif %}
+    <p>
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%d %b" }}</time>&nbsp;&nbsp;
+      <a href="{{ post.url | relative_url }}" title="{{ post.excerpt | strip_html | strip }}">{% include title_emoji.html %}</a>&nbsp;
+      {% if post.last_modified_at %}
+      {% comment %}
+      https://stackoverflow.com/questions/37340705/shopify-liquid-find-number-of-days-between-two-dates
+      {% endcomment %}
+      {% assign curr_date = 'now' | date: '%s' %}
+      {% assign updated_date = post.last_modified_at | date: '%s' %}
+      {% assign diff_seconds = curr_date | minus: updated_date %}
+      {% assign diff_days = diff_seconds | divided_by: 3600 | divided_by: 24 %}
+      {% if diff_days < 14 %}
+      🔸
+      {% endif %}
+      {% endif %}
+    </p>
+
+  {% if forloop.last %}
+    </div>
+  </div>
+  {% endif %}
+
+{% endfor %}
+
+<p class="meta">🔸 = Recently updated</p>

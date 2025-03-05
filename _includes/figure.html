@@ -1,0 +1,22 @@
+{% if include.caption %}
+<figure>
+  {% if include.href %}
+  <a href="{{ include.href }}">
+    <img src="{{ include.src }}" alt="{{ include.caption }}" class="{{ include.align }}">
+  </a>
+  {% else %}
+  <img src="{{ include.src }}" alt="{{ include.caption }}" class="{{ include.align }}">
+  {% endif %}
+  <figcaption><span>{{ include.caption }}</span></figcaption>
+</figure>
+{% else %}
+<figure>
+  {% if include.href %}
+  <a href="{{ include.href }}">
+    <img src="{{ include.src }}" alt="someone forgot to put a caption" class="{{ include.align }}">
+  </a>
+  {% else %}
+  <img src="{{ include.src }}" alt="someone forgot to put a caption" class="{{ include.align }}">
+  {% endif %}
+</figure>
+{% endif %}

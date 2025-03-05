@@ -1,0 +1,27 @@
+{% if post %}
+  {% assign title = post.title %}
+  {% assign lowercaseTags = post.tags | join: ',' | downcase | split: ',' %}
+{% else %}
+  {% assign title = page.title %}
+  {% assign lowercaseTags = page.tags | join: ',' | downcase | split: ',' %}
+{% endif %}
+
+{% if lowercaseTags contains "photos" %}
+  🖼️ {{ title }}
+{% elsif lowercaseTags contains "robotics" %}
+  🤖 {{ title }}
+{% elsif lowercaseTags contains "art" %}
+  🎨 {{ title }}
+{% elsif lowercaseTags contains "videos" %}
+  🎥 {{ title }}
+{% elsif lowercaseTags contains "music" %}
+  🎵 {{ title }}
+{% elsif lowercaseTags contains "writing" %}
+  📝 {{ title }}
+{% elsif lowercaseTags contains "tech" %}
+  💻 {{ title }}
+{% elsif lowercaseTags contains "link" %}
+  🔗 {{ title }}
+{% else %}
+  {{ title }}
+{% endif %}
