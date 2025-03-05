@@ -7,19 +7,19 @@ Security isn’t just about defense—it’s about understanding the unknown. I 
 
 <figure>
   <picture>
-    <source type="image/webp" srcset="/assets/images/path_planning_01.600h.webp">
-    <source type="image/jpeg" srcset="/assets/images/path_planning_01.600h.jpg">
-    <img src="/studio.jpg" alt="" class="center">
+    <source type="image/webp" srcset="/chihiro043.jpg">
+    <source type="image/jpeg" srcset="/chihiro043.jpg">
+    <img src="/chihiro043.jpg" alt="" class="center">
   </picture>
 <!-- <figcaption class="maincolumn-figure">Path Planning is hard. <br>credit: <a href="http://phdcomics.com/">Jorge Cham</a> -->
 <!-- </figcaption> -->
 </figure>
-
+<!-- 
 I earned a master's degree in Robotics from the University of Utah.
 I worked under [Dr. Tucker Hermans](http://www.cs.utah.edu/~thermans/) at the
 Learning Lab for Manipulator Autonomy ([LL4MA Lab 🦙](https://robot-learning.cs.utah.edu/)).
 During this time, I worked on Grasp Planning using Probabilistic Modeling and
-Machine Learning.
+Machine Learning. -->
 
 <!--
 <figure>
@@ -31,14 +31,14 @@ Machine Learning.
 </figure>
 -->
 
-You can reach me over [email](mailto:hi@chenna.me),
+You can reach me over [email](mailto:contact@onkark.com),
 [twitter](https://twitter.com/{{site.twitter_username}}),
 [LinkedIn](https://www.linkedin.com/in/{{site.linkedin_username}}). Some of my
 projects are on [GitHub](https://github.com/{{site.github_username}}) and on
-my [resume](https://resume.chenna.me/). My old
+<!-- my [resume](https://resume.onkark.com/). My old
 website is [yubaba](http://yubaba.herokuapp.com) and you can also find me on
 tor 🧅 at [kchenna [truncated] d.onion](http://kchennaidgy3hvkhzesbde5jgob6434fucyntd34fhiadjfvjfcjzbid.onion/).
-If you want to send me something super secret, use my [public key](https://keybase.io/hashb/pgp_keys.asc).
+If you want to send me something super secret, use my [public key](https://keybase.io/hashb/pgp_keys.asc). -->
 <!-- Here's an old [picture of me](/headshot). -->
 
 <!-- 

@@ -30,4 +30,4 @@ through their purchases was something I never thought I would find so exciting.
 
 ps: based on the color pallet and design of the baby clothes, I think it is a boy.
 
-![Screen Shot of the order containing three baby onsies](//storage.googleapis.com/i.chenna.me/posts/shopping-stranger-2.png){:loading="lazy"}
+![Screen Shot of the order containing three baby onsies](//storage.googleapis.com/i.onkark.com/posts/shopping-stranger-2.png){:loading="lazy"}

@@ -9,4 +9,4 @@ tags:
 published: true
 ---
 
-![Strava Facets](//storage.googleapis.com/i.chenna.me/posts/strava-facets.png){:loading="lazy"}
+![Strava Facets](//storage.googleapis.com/i.onkark.com/posts/strava-facets.png){:loading="lazy"}

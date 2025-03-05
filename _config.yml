@@ -1,13 +1,13 @@
 # Site settings
 
-title: "Chenna Kautilya ~ /home/hashb"
-title_body: '/home/hashb'
-description: 'Chenna Kautilya | Makes Robots Move'
-name: 'Chenna Kautilya''s home on the Internet'
+title: "Onkar Koli ~ /home/onkar"
+title_body: '/home/onkar'
+description: 'I Hack Things'
+name: 'Onkar''s home on the Internet'
 
 baseurl: ''  # the subpath of your site, e.g. /blog
-url: 'https://chenna.me'  # the base hostname & protocol for your site
-repo_url: 'https://github.com/hashb/chenna.me'
+url: 'https://onkark.com'  # the base hostname & protocol for your site
+repo_url: 'https://github.com/0nk4r'
 
 timezone: UTC
 
@@ -59,18 +59,18 @@ jekyll_compose:
 #       - "Captain's log"
 
 author: 
-  name: Chenna Kautilya
+  name: Onkar Koli
   rss: true
-  mail: hi@chenna.me
-  twitter: kautilyach
-  github: hashb
-  youtube: kautilyach
-  linkedin: kautilyach
+  mail: onkark.com
+  twitter: .
+  github: 0nk4r
+  youtube: .
+  linkedin: 0nk4r
 
 # Social
-twitter_username: 'kautilyach'
-github_username:  'hashb'
-linkedin_username: 'kautilyach'
+twitter_username: '0nk4r'
+github_username:  '0nk4r'
+linkedin_username: '0nk4r'
 
 twitter:
   username: kautilyach
@@ -87,7 +87,7 @@ port: 4000
 
 prose:
   rooturl: '_posts'
-  siteurl: 'https://chenna.me/'
+  siteurl: 'https://onkark.com/'
   media: 'assets/uploads'
   ignore:
     - index.html

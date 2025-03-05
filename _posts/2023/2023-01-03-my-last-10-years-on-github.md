@@ -63,7 +63,7 @@ curl https://api.github.com/users/hashb
   "site_admin": false,
   "name": "Chenna Kautilya",
   "company": null,
-  "blog": "https://chenna.me/",
+  "blog": "https://onkark.com/",
   "location": "San Francisco , CA",
   "email": null,
   "hireable": true,

@@ -4,7 +4,7 @@ title: Art
 tags: [page]
 layout: null
 redirect_to:
-  - https://kautilya.art
+  - https://onkark.com
 ---
 
 Rules
