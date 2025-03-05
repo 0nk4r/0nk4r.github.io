@@ -19,10 +19,9 @@
   <meta name="theme-color" content="#212121" media="(prefers-color-scheme: dark)">
 
   <!-- bing verify -->
-  <meta name="msvalidate.01" content="A91A3D6480BA119D7D8EAF3E5E1E8FB1" />
-  <!-- umami analytics -->
-  <script defer src="https://umami.onkark.com/script.js" data-website-id="3ec6bdf1-7533-4e02-bd34-122ab82404a5"></script>
-  <!-- RSS feed metadata -->
+  <meta name="msvalidate.01" content="91C0302609FB4DB6DA3A9B7275356E49" />
+    <!-- umami analytics -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="b4da0511-ce02-4381-b154-7200a9cf9615"></script>  <!-- RSS feed metadata -->
   {% feed_meta %}
 </head>
 
@@ -36,7 +35,7 @@
         <li><a href="/" {% if current.size==0 %}data-current="current item" {% endif %}>home</a></li>
         <li><a href="/blog/" {% if current[1]=='blog' %}data-current="current item" {% endif %}>blog</a></li>
         <li><a href="/work/" {% if current[1]=='work' %}data-current="current item" {% endif %}>work</a></li>
-        <li><a href="/photos/" {% if current[1]=='photos' %}data-current="current item" {% endif %}>photos</a></li>
+        <!-- <li><a href="/photos/" {% if current[1]=='photos' %}data-current="current item" {% endif %}>photos</a></li> -->
         <li><a href="/archives/" {% if current[1]=='archives' %}data-current="current item" {% endif %}>archive</a></li>
       </ul>
     </nav>
@@ -49,14 +48,14 @@
   <!-- for some reason, small tag gets closed early when I put it inside footer -->
   <small>
     <footer id="footer">
-      <p class="copyright">Copyright &copy; Onkar Koli, 2011 - {{ site.time | date: '%Y' }}. Powered by <a
+      <!-- <p class="copyright">Copyright &copy; Onkar Koli, 2011 - {{ site.time | date: '%Y' }}. Powered by <a
           href="http://jekyllrb.com">Jekyll</a>,
         <a href="https://github.com/hashb/california">California</a> theme
         <br>
         The opinions on this site are my own and do not represent those of my employer
         <br>
         This page was built from <a href="{{ site.repo_url }}/blob/master/{{ page.path }}">source</a> on {{site.time}}
-        <br>
+        <br> -->
         <!-- <a href="/feed.xml"><img src="/assets/images/rss.svg" alt="rss | Subscribe" width="25px"></a> -->
         <br>
         <!-- handcrafted with <span style="color: red;">&hearts;</span> in San Francisco -->

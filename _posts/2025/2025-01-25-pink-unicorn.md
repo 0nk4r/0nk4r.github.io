@@ -8,3 +8,4 @@ tags: [Photos]
 
 {% include responsive_image.html base_image_name="IMG_0071" alt="Pink Unicorn" 
     width="1920" height="2575" %}
+    

@@ -11,18 +11,11 @@ tags: [page]
 
 ### Work
 
-#### Oct 30 2021
+#### June 24 - .
 
-- Moved to SF little while back
-- Started working at Nimble Robotics
-
-
-#### Mar 21 2021
-
-I am working at Omron Research as a Robotics Software Engineer.
+- I am working as Product Security Engineer @Solarwinds.
 
 ### Learning
-
-- Robot Control
-- Motion Planning
-- Trajectory Optimization
+ 
+- Diving Deep into SCR 
+- Fuzzing
