@@ -1,34 +1,36 @@
-name: Resize Images and Push
+name: Responsive Image Generator
 
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
+    paths:
+      - 'assets/images/**'
+      - 'scripts/responsive_image_generator.py'
+      - '.github/workflows/image_resize.yml'
+  pull_request:
+    paths:
+      - 'assets/images/**'
+      - 'scripts/responsive_image_generator.py'
+      - '.github/workflows/image_resize.yml'
 
 jobs:
-  resize:
+  generate_images:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set Up Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
-          
-      - name: Install dependencies
-        run: pip install tyro pillow thumbhash
+          python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install tyro pillow
-
-      - name: Install Dependencies
         run: |
-          pip install pillow
+          python -m pip install --upgrade pip
+          pip install tyro thumbhash pillow
 
-      - name: Run Image Resizing Script
+      - name: Run responsive image generator
         run: |
           python scripts/responsive_image_generator.py --in-path assets/images/
 
