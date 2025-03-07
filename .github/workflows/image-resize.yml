@@ -18,6 +18,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Install dependencies
+        run: pip install tyro pillow
+
       - name: Install Dependencies
         run: |
           pip install pillow
