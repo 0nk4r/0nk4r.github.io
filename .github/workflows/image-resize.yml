@@ -23,7 +23,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Resize images
-        run: python /scripts/responsive_image_generator.py assets/images/
+        run: python scripts/responsive_image_generator.py assets/images/
 
       - name: Commit and push resized images
         run: |
