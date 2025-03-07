@@ -11,6 +11,7 @@ on:
       - 'assets/images/**'
       - 'scripts/responsive_image_generator.py'
       - '.github/workflows/image_resize.yml'
+  workflow_dispatch:
 
 jobs:
   generate_images:
