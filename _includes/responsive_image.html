@@ -2,7 +2,7 @@
   {{ include.base_image_name }}
 {% endcapture %}
 
-{% assign url_prefix = "//i.onkark.com/photos/prod/opt/" %}
+{% assign url_prefix = "/assets/images/" %}
 {% assign image_path = url_prefix | append: include.base_image_name %}
 
 <img
@@ -22,6 +22,5 @@
   loading="lazy"
   decoding="async"
   class="responsive-image"
-  loading="lazy"
   style="width: 100%; height: auto;"
 />
