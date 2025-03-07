@@ -1,11 +1,13 @@
 ---
 layout: post
-title: Let's start again with Deserialization
+title: Diving Deep into DeSerialization Issues
 date: 2025-01-25 15:35 -0700
 last_modified_at: 2025-02-02 07:58:45 +0000
 tags: [Tech]
 ---
 
-{% include responsive_image.html base_image_name="de01" alt="Pink Unicorn" 
-    width="1920" height="2575" %}
+
+
+<img src="/assets/images/de01.jpeg" alt="Description" width="600">
+
     
