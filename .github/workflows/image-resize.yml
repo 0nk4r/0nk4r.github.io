@@ -1,34 +1,38 @@
-name: Resize Images
+name: Resize Images and Push
 
 on:
   push:
-    paths:
-      - "assets/images/**.jpg"
-      - "assets/images/**.png"
-  workflow_dispatch:  # Allows manual triggering
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-  resize-images:
+  resize:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Set Up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: '3.x'
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - name: Install Dependencies
+        run: |
+          pip install pillow
 
-      - name: Resize images
-        run: python scripts/responsive_image_generator.py --in-path assets/images/
+      - name: Run Image Resizing Script
+        run: |
+          python scripts/responsive_image_generator.py --in-path assets/images/
 
-      - name: Commit and push resized images
+      - name: Configure Git
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add assets/images/opt/
-          git commit -m "Auto-resized images"
-          git push origin main || echo "No changes to commit"
+
+      - name: Commit and Push Resized Images
+        run: |
+          git add assets/images/
+          git commit -m "Auto-resized images" || echo "No changes to commit"
+          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/onk4r/onk4r.github.io.git main
