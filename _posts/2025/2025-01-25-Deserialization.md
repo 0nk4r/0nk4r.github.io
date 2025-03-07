@@ -3,7 +3,7 @@ layout: post
 title: Let's start again with Deserialization
 date: 2025-01-25 15:35 -0700
 last_modified_at: 2025-02-02 07:58:45 +0000
-tags: [Photos]
+tags: [Tech]
 ---
 
 {% include responsive_image.html base_image_name="IMG_0071" alt="Pink Unicorn" 

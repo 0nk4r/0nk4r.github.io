@@ -14,28 +14,277 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" as="style" href="/assets/css/style.css" rel="stylesheet" />
   <link href="/assets/css/style.css" rel="stylesheet" />
+  
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <meta name="theme-color" content="#fdfdfd" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#212121" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#212121" media="(prefers-color-scheme: dark)">
 
   <!-- bing verify -->
   <meta name="msvalidate.01" content="91C0302609FB4DB6DA3A9B7275356E49" />
-    <!-- umami analytics -->
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="b4da0511-ce02-4381-b154-7200a9cf9615"></script>  <!-- RSS feed metadata -->
+  <!-- umami analytics -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="b4da0511-ce02-4381-b154-7200a9cf9615"></script>
+  <!-- RSS feed metadata -->
   {% feed_meta %}
+  
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --accent-color: #3498db;
+      --text-color: #333;
+      --secondary-text: #666;
+      --bg-color: #fdfdfd;
+      --border-color: #eaeaea;
+      --link-color: #2980b9;
+      --link-hover: #e74c3c;
+      --nav-active: #3498db;
+      --code-bg: #f5f5f5;
+      --card-shadow: 0 4px 6px rgba(0,0,0,0.08);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary-color: #ecf0f1;
+        --accent-color: #3498db;
+        --text-color: #e0e0e0;
+        --secondary-text: #b0b0b0;
+        --bg-color: #212121;
+        --border-color: #2c2c2c;
+        --link-color: #5dade2;
+        --link-hover: #e74c3c;
+        --nav-active: #3498db;
+        --code-bg: #2c2c2c;
+        --card-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      }
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    #header {
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+    
+    #header a {
+      text-decoration: none;
+      color: var(--primary-color);
+      position: relative;
+    }
+    
+    #header a:hover {
+      color: var(--link-hover);
+    }
+    
+    #header p {
+      margin: 0 0 1rem;
+    }
+    
+    #header .site-title {
+      display: flex;
+      align-items: center;
+      font-size: 1.5em;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    
+    #header .terminal-icon {
+      margin-right: 0.5rem;
+      color: var(--accent-color);
+    }
+    
+    #header .description {
+      font-size: 1.1rem;
+      color: var(--secondary-text);
+      margin-bottom: 1.5rem;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 1rem 0;
+    }
+    
+    nav a {
+      font-weight: 500;
+      padding: 0.3rem 0.5rem;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+    
+    nav a[data-current="current item"] {
+      color: var(--nav-active);
+      font-weight: 600;
+      position: relative;
+    }
+    
+    nav a[data-current="current item"]::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--nav-active);
+    }
+    
+    main {
+      margin-bottom: 4rem;
+    }
+    
+    main img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s ease;
+    }
+    
+    main img:hover {
+      transform: scale(1.01);
+    }
+    
+    main img.center {
+      display: block;
+      margin: 2rem auto;
+    }
+    
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
+    a:hover {
+      color: var(--link-hover);
+    }
+    
+    h1, h2, h3, h4, h5 {
+      color: var(--primary-color);
+      line-height: 1.3;
+      margin: 1.5rem 0 1rem;
+    }
+    
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    
+    p {
+      margin-bottom: 1.2rem;
+    }
+    
+    figure {
+      margin: 2rem 0;
+    }
+    
+    figcaption {
+      text-align: center;
+      margin-top: 0.8rem;
+      font-style: italic;
+      color: var(--secondary-text);
+      font-size: 0.9rem;
+    }
+    
+    pre, code {
+      background-color: var(--code-bg);
+      border-radius: 4px;
+      font-family: 'Menlo', monospace;
+      padding: 0.2rem 0.4rem;
+      font-size: 0.9rem;
+    }
+    
+    pre {
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    
+    pre code {
+      padding: 0;
+      background-color: transparent;
+    }
+    
+    blockquote {
+      border-left: 4px solid var(--accent-color);
+      padding-left: 1rem;
+      color: var(--secondary-text);
+      font-style: italic;
+      margin: 1.5rem 0 1.5rem 1rem;
+    }
+    
+    hr {
+      border: none;
+      border-top: 1px solid var(--border-color);
+      margin: 2rem 0;
+    }
+    
+    .footnotes {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.9rem;
+    }
+    
+    #footer {
+      padding: 2rem 0;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      color: var(--secondary-text);
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 0 15px;
+      }
+      
+      nav ul {
+        gap: 1rem;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <header id="header">
-    <p><em><a href="/" style="font-size: 1.5em; font-style: normal;">{{ site.title_body }}</a></em></p>
-    <p style="margin: -1em 0 2em;">{{ site.description }}</p>
+    <p class="site-title">
+      <span class="terminal-icon">&gt;_</span>
+      <a href="/">{{ site.title_body }}</a>
+    </p>
+    <p class="description">{{ site.description }}</p>
     {% assign current = page.url | downcase | split: '/' %}
-    <nav style="margin: -1em 0 2em;">
+    <nav>
       <ul>
         <li><a href="/" {% if current.size==0 %}data-current="current item" {% endif %}>home</a></li>
         <li><a href="/blog/" {% if current[1]=='blog' %}data-current="current item" {% endif %}>blog</a></li>
         <li><a href="/work/" {% if current[1]=='work' %}data-current="current item" {% endif %}>work</a></li>
-        <!-- <li><a href="/photos/" {% if current[1]=='photos' %}data-current="current item" {% endif %}>photos</a></li> -->
         <li><a href="/archives/" {% if current[1]=='archives' %}data-current="current item" {% endif %}>archive</a></li>
       </ul>
     </nav>
@@ -45,9 +294,9 @@
     {{ content }}
   </main>
 
-  <!-- for some reason, small tag gets closed early when I put it inside footer -->
-  <small>
-    <footer id="footer">
+  <footer id="footer">
+    <small>
+      <!-- You can uncomment the following lines if you wish to include them -->
       <!-- <p class="copyright">Copyright &copy; Onkar Koli, 2011 - {{ site.time | date: '%Y' }}. Powered by <a
           href="http://jekyllrb.com">Jekyll</a>,
         <a href="https://github.com/hashb/california">California</a> theme
@@ -57,18 +306,13 @@
         This page was built from <a href="{{ site.repo_url }}/blob/master/{{ page.path }}">source</a> on {{site.time}}
         <br> -->
         <!-- <a href="/feed.xml"><img src="/assets/images/rss.svg" alt="rss | Subscribe" width="25px"></a> -->
-        <br>
-        <!-- handcrafted with <span style="color: red;">&hearts;</span> in San Francisco -->
-      </p>
-
-      <!-- <img src="/assets/images/by-nc-sa.svg"
-        alt="by-nc-sa;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License"
-        style="display: block; margin-left: auto; width: 5%;"> -->
+      
+      <!-- handcrafted with <span style="color: red;">&hearts;</span> in San Francisco -->
+      
       <noscript>
         hello stranger with no javascript ;)
       </noscript>
-
-    </footer>
-  </small>
+    </small>
+  </footer>
 </body>
 </html>
