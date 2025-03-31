@@ -2,74 +2,78 @@
 layout: mainpage
 ---
 
-<span style="color:grey">Updated on February, 2025</span>
+<span style="color:grey">Updated on February 2025</span>
 
 ___
 
-## About
-![](profile.jpg){: width="55%"}
+## Onkar Koli  
+**Product Security Engineer** @ SolarWinds  
+Mumbai, Maharashtra, India  
 
-Any statistical and computational methods operate under the constraints imposed by the data generating process.
-To put it another way, no method can extract information from data beyond what is given by nature.
-Based on this insight, I study how evolutionary processes shape statistical inference. 
+![](profile.jpg){: width="35%"}
 
-I'm currently working on the following topics:
-- Graphical algorithms and tree sequences for scalable statistical genetics
-- Phylogenetic constraints of molecular language models
+## Overview
+Security professional focused on building resilient systems against modern threats. Currently securing SolarWinds products across web, mobile, and cloud environments while exploring AI/ML security applications. Passionate about practical defense strategies and knowledge sharing.
 
-Contact: <hblee@umich.edu>
-
-
-## Education
-
-### University of Michigan, Ann Arbor
-- Doctor of Philosophy, Department of Statistics (2024.9 -)
-
-### Seoul National University
-- Doctor of Medicine, Department of Medicine (2016.3 - 2023.8)
-- Bachelor of Mathematics, Department of Mathematical Sciences (2017.3 - 2023.8)
-
-## Professional service
-### Peer review
-_International Journal of Epidemiology_,
-_Nature Communications_,
-_Genetics (GSA)_
+**Connect with me to discuss:**  
+- Secure development practices  
+- Cloud security architectures  
+- Responsible vulnerability disclosure  
 
 ---
 
-## Publications
+## Professional Journey
 
-<ul style='list-style: none; padding: 0px;'>
-    <b>*:</b> Equal contribution
-	{% for format in site.data.research %}
-		<li>
-			<h3 class='pub-format'> {{ format.name }} </h3>
-			<div class='pubbox-out'>
-				<div class='pubbox-in'>
-					<ul style='list-style: none; padding: 0px; font-size: 0.8em;'>
-						{% for paper in format.papers %}
-							<li>
-								<b>
-								{{ paper.fauthor }}, 
-								</b>
-								{{ paper.author }} 
-								<a href='{{ paper.doi }}'>{{ paper.name }}</a>. 
-								<i>{{ paper.journal }}</i>,
-								{{ paper.year }}<br>
-								<b>
-								Description:
-								</b>
-								{{ paper.description }}
-								<br>
-								<br>
-							</li>
-						{% endfor %}
-						{% if format.name == 'Journals' %}
-						{% endif %}
-					</ul>
-				</div>
-			</div>
-		</li>
-		
-	{% endfor %}
-</ul>
+### SolarWinds  
+**Product Security Engineer** (July 2024 - Present)  
+- Implement security controls for enterprise software products  
+- Conduct threat modeling for cloud-native applications  
+- Collaborate with DevOps teams on CI/CD pipeline security  
+
+### Payatu  
+**Security Consultant** (June 2023 - July 2024)  
+- Performed penetration testing for financial sector clients  
+- Developed secure coding guidelines for IoT platforms  
+- Mentored junior team members in vulnerability assessment  
+
+**Security Consultant Intern** (Nov 2022 - May 2023)  
+- Assisted in web application security assessments  
+- Automated routine security testing processes  
+- Documented vulnerability remediation procedures  
+
+### Vishwaniketan iMEET  
+**Teaching Assistant** (Nov 2022 - May 2023)  
+- Co-taught network security fundamentals  
+- Designed hands-on labs for encryption technologies  
+- Guided students in capture-the-flag exercises  
+
+### SecurityBoat  
+**Security Analyst Intern** (July 2021 - Jan 2022)  
+- Monitored SIEM alerts for enterprise clients  
+- Assisted in phishing simulation campaigns  
+- Documented incident response playbooks  
+
+---
+
+## Technical Competencies
+- **Application Security:** SAST/DAST, WAF configuration  
+- **Cloud Security:** AWS/IAM, Container Hardening  
+- **Offensive Security:** Penetration Testing, Vulnerability Research  
+
+## Education
+**University of Mumbai**  
+B.E. Electrical & Electronics Engineering (2019-2023)  
+- Coursework: Network Security, Cryptography  
+- Project: Smart Grid Security Analysis  
+
+## Recognitions
+- eCPPTv2 Certified Professional  
+- Hall of Fame - Responsible Disclosure Awards  
+- Bugcrowd Contributor (2020-2022)  
+
+---
+
+<span style="font-size:0.9em">
+📧 [contact@onkark.com](mailto:contact@onkark.com)  
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/0nk4r/)  
+</span>
