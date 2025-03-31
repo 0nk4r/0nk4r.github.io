@@ -3,11 +3,11 @@ markdown:         kramdown
 highlighter:      rouge
 
 # Setup
-title:            Hanbin Lee
-tagline:          'A Jekyll theme'
-description:      'Statistics, Probability, and Evolution'
-url:              https://hanbin973.github.io
-baseurl:          '/'
+title:            Onkar Koli
+tagline:          ''
+description:      'Engineer'
+url:              https://onkark.com
+baseurl:          '/index.html'
                   # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
                   # If you want to move just the blog index pages but keep
@@ -15,8 +15,8 @@ baseurl:          '/'
                   # sidebar_blog_link below.
 
 author:
-  name:           'Hanbin Lee'
-  url:            https://twitter.com/epigenci
+  name:           'Onkar Koli'
+  url:            https://github.com/0nk4r
 
 paginate:         5
 paginate_path:    '/blog/page:num'
