@@ -1,57 +1,19 @@
 ---
 layout: default
 ---
-
-<div class="content">
-  {% include pagination-newer.html %}
-
-  {{ content }}
-  
-  <header>
-    <h2 class="page-title">Work</h2>
-  </header>
-
-  <div>
-    <ul>
+<header>
+  <h3 class="page-title">Work</h3>
+</header>
+<hr width="50%" />
+</main>
+  <ul>
       <li>
-        {% include back-link.html %}
-        <h5 class="name">{{ page.title }}</h5>
+          <a href="https://github.com/0nk4r/badphp">BadPHP</a>
+          <div class="description"> This is a vulnerable PHP web application for SCR. It is not a complete web app but rather consists of independent modules like login, register, and cart. Feel free to add your own modules or create a pull request. We are working on best-practice modules so you can break them and learn how to fix them in one place.
+          </div>
       </li>
-    </ul>
-  </div>
+  </ul>
+</main>
 
-  {% include back-link.html %}
 
-  {% for post in paginator.posts %}
-  <article class="post-body">
-    <h2 class="post-title">
-      <a href="{{ post.url | relative_url }}">
-        {{ post.title }}
-      </a>
-    </h2>
-    {% include post-meta.html post=post %}
-
-    {% if post.excerpt %}
-      {{ post.excerpt }}
-    {% else %}
-      {{ post.content }}
-    {% endif %}
-
-    {% if post.excerpt %}
-      {% comment %}Excerpt may be equal to content. Check.{% endcomment %}
-      {% capture content_words %}
-        {{ post.content | number_of_words }}
-      {% endcapture %}
-      {% capture excerpt_words %}
-        {{ post.excerpt | number_of_words }}
-      {% endcapture %}
-
-      {% if content_words != excerpt_words %}
-        <a href="{{ post.url | relative_url }}">More &hellip;</a>
-      {% endif %}
-    {% endif %}
-  </article>
-  {% endfor %}
-
-  {% include pagination-older.html %}
-</div>
+  
