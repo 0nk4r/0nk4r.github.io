@@ -6,6 +6,21 @@ layout: default
   {% include pagination-newer.html %}
 
   {{ content }}
+  
+  <header>
+    <h2 class="page-title">Work</h2>
+  </header>
+
+  <div>
+    <ul>
+      <li>
+        {% include back-link.html %}
+        <h5 class="name">{{ page.title }}</h5>
+      </li>
+    </ul>
+  </div>
+
+  {% include back-link.html %}
 
   {% for post in paginator.posts %}
   <article class="post-body">
