@@ -9,7 +9,6 @@ ___
 
 ![](profile.jpg){: width="35%"}
 
-## Overview
 
 I'm Onkar, a Product Security Engineer at SolarWinds. (That's it for now ,I'll add little more once I figured out! )
 If want to discuss anything feel free to say Hi! 👋
