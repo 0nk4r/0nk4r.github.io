@@ -2,10 +2,15 @@
 layout: default
 ---
 <header>
-  {% include back-link.html %}
-  <h1 class="page-title">{{ page.title }}</h1>
+  <h2 class="page-title">Work</h2>
 </header>
-<div class="content">
-  {{ content }}
+
+<div>
+<ul>
+  <li>
+    {% include back-link.html %}
+    <h5 class="name">{{ page.title }}</h5>
+  </li>
 </div>
+
 {% include back-link.html %}
