@@ -4,15 +4,10 @@ highlighter:      rouge
 
 # Setup
 title:            Onkar Koli
-tagline:          ''
-description:      'Engineer'
+tagline:          'Security Engineer'
+description:      'Product Security Engineer at SolarWinds'
 url:              https://onkark.com
-baseurl:          '/index.html'
-                  # the optional subpath of your site, e.g. "/blog"
-                  # NB: This applies to all pages in your Jekyll site.
-                  # If you want to move just the blog index pages but keep
-                  # other pages at root, see the paginate_path and
-                  # sidebar_blog_link below.
+baseurl:          ''  # Empty for custom domain
 
 author:
   name:           'Onkar Koli'
@@ -20,20 +15,27 @@ author:
 
 paginate:         5
 paginate_path:    '/blog/page:num'
-                    # Or '/blog/page:num' if you want to move your index pages
 
 plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
+  - jekyll-seo-tag
 
 # Sidebar link settings
 sidebar_home_link:  true
-sidebar_blog_link:  '/blog/'   # By default, your home page is your blog
-                                # page. If you change your paginate_path,
-                                # set this to the root of the paginate_path
-                                # to enable a separate blog link.
-                               
+sidebar_blog_link:  '/blog/'
+
+# Build settings
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .gitignore
+  - .github
+  - .stylelintrc.json
+
 # Google analytics
 # google_analytics: 'UA-144594777-1'
 
