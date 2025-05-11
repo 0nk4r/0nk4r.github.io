@@ -1,11 +1,161 @@
 ---
-layout: index
+layout: default
 title: Blog
-comments: true
 ---
-<header>
-  {% include back-link.html %}
-</header>
+
+<section class="blog-section">
+  <div class="blog-header">
+    <h1>Blog</h1>
+    <p class="subtitle">Thoughts on security, engineering, and technology</p>
+  </div>
+
+  <div class="blog-content">
+    {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+    {% for year in posts_by_year %}
+      <div class="year-section">
+        <h2 class="year">{{ year.name }}</h2>
+        <div class="posts-grid">
+          {% for post in year.items %}
+            <article class="post-card">
+              <div class="post-content">
+                <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+                <div class="post-meta">
+                  <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d" }}</time>
+                  {% if post.tags %}
+                    <span class="post-tags">
+                      {% for tag in post.tags %}
+                        <span class="tag">{{ tag }}</span>
+                      {% endfor %}
+                    </span>
+                  {% endif %}
+                </div>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+.blog-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.blog-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.blog-header h1 {
+  color: var(--primary);
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 800;
+}
+
+.blog-header .subtitle {
+  color: var(--accent);
+  font-size: 1.25rem;
+  margin: 1rem 0 0;
+}
+
+.year-section {
+  margin-bottom: 4rem;
+}
+
+.year {
+  color: var(--primary);
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.post-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(23, 71, 52, 0.12);
+}
+
+.post-content {
+  padding: 1.5rem;
+}
+
+.post-content h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+}
+
+.post-content h3 a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.post-excerpt {
+  color: var(--light-text);
+  font-size: 0.95rem;
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+.post-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--light-text);
+}
+
+.post-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: rgba(23, 71, 52, 0.1);
+  color: var(--primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .blog-section {
+    padding: 3rem 1rem;
+  }
+
+  .blog-header h1 {
+    font-size: 2rem;
+  }
+
+  .year {
+    font-size: 1.5rem;
+  }
+
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 
 
 

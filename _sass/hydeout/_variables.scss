@@ -8,10 +8,11 @@ $gray-6: #313131 !default;
 $red: #ac4142 !default;
 $orange: #d28445 !default;
 $yellow: #f4bf75 !default;
-$green: #1B4D3E !default;
+$green: #174734 !default;
 $cyan: #75b5aa !default;
 $blue: #2C3E50 !default;
 $brown: #8f5536 !default;
+$gold: #D4AF37 !default;
 
 $root-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif !default;
 $root-font-size: 1rem !default;
@@ -42,12 +43,12 @@ $code-font-family: Menlo, Monaco, 'Courier New', monospace !default;
 $code-color: #bf616a !default;
 
 // Hyde theming
-$sidebar-bg-color: #1B4D3E !default;
+$sidebar-bg-color: $green !default;
 $sidebar-fg-color: #F5F5F5 !default;
 $sidebar-sticky: true !default;
 $layout-reverse: false !default;
 
-$sidebar-title-color: $sidebar-fg-color !default;
-$sidebar-link-color: $sidebar-fg-color !default;
-$sidebar-text-color: rgba($sidebar-fg-color, 0.75) !default;
-$sidebar-icon-color: rgba($sidebar-fg-color, 0.85) !default;
+$sidebar-title-color: $gold !default;
+$sidebar-link-color: #F5F5F5 !default;
+$sidebar-text-color: rgba($sidebar-fg-color, 0.85) !default;
+$sidebar-icon-color: $gold !default;

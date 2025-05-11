@@ -5,13 +5,20 @@ highlighter:      rouge
 # Setup
 title:            Onkar Koli
 tagline:          'Security Engineer'
-description:      'Product Security Engineer at SolarWinds'
+description:      'Product Security Engineer at SolarWinds, specializing in application security, secure development practices, and security architecture.'
 url:              https://onkark.com
 baseurl:          ''  # Empty for custom domain
 
 author:
   name:           'Onkar Koli'
   url:            https://github.com/0nk4r
+  email:          contact@onkark.com
+
+# SEO
+keywords:         [security engineering, application security, threat modeling, secure development, cybersecurity]
+lang:             en-US
+locale:           en_US
+timezone:         UTC
 
 paginate:         5
 paginate_path:    '/blog/page:num'
@@ -21,6 +28,7 @@ plugins:
   - jekyll-gist
   - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Sidebar link settings
 sidebar_home_link:  true

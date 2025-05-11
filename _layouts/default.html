@@ -1,16 +1,194 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: 'en-us'}}">
-
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   {% include head.html %}
+</head>
+<body>
+  <nav class="top-nav">
+    <div class="nav-container">
+      <a href="{{ "/" | relative_url }}" class="nav-logo">{{ site.title }}</a>
+      <div class="nav-links">
+        <a href="{{ "/" | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">Home</a>
+        <a href="{{ "/blog/" | relative_url }}" class="nav-link {% if page.url contains '/blog/' %}active{% endif %}">Blog</a>
+        <a href="{{ "/about/" | relative_url }}" class="nav-link {% if page.url == '/about/' %}active{% endif %}">About</a>
+      </div>
+    </div>
+  </nav>
 
-  <body class="{{ page.layout }}{% if page.url == '/' %} home{% endif %}">
+  <main class="main-content">
+    {{ content }}
+  </main>
 
-    {% include sidebar.html %}
-
-    <main class="container">
-      {{ content }}
-    </main>
-
-    {% include custom-foot.html %}
-  </body>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="https://github.com/0nk4r" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/0nk4r" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+      <div class="footer-text">
+        <p>Built with <span class="heart">♥</span> by AI and <a href="https://github.com/0nk4r" target="_blank" rel="noopener">Onkar</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
 </html>
+
+<style>
+:root {
+  --primary: #174734;
+  --accent: #D4AF37;
+  --text: #2C3E50;
+  --light-text: #666;
+  --background: #FFFFFF;
+  --nav-bg: rgba(255, 255, 255, 0.98);
+  --border: #eee;
+  --shadow: 0 2px 8px rgba(23, 71, 52, 0.07);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  background: var(--background);
+}
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--nav-bg);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.nav-link:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.2s;
+}
+
+.nav-link:hover:after,
+.nav-link.active:after {
+  width: 100%;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 5rem auto 0;
+  padding: 2rem;
+  min-height: calc(100vh - 200px);
+}
+
+.site-footer {
+  background: var(--primary);
+  color: white;
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+.footer-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.heart {
+  color: var(--accent);
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .main-content {
+    padding: 1rem;
+  }
+}
+</style>
