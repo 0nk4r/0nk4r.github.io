@@ -3,226 +3,81 @@ layout: default
 title: Home
 ---
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>Onkar Koli</h1>
-    <p class="subtitle">Product Security Engineer</p>
-    <p class="description">Building secure software and protecting digital assets through innovative security solutions.</p>
-    <div class="hero-links">
-      <a href="/blog" class="primary-button">Read Blog</a>
-      <a href="/about" class="secondary-button">About Me</a>
-    </div>
-  </div>
-</section>
+## Onkar Koli
 
-<section class="featured-posts">
-  <h2>Latest Insights</h2>
-  <div class="posts-grid">
-    {% for post in site.posts limit:3 %}
-      <article class="post-card">
-        <div class="post-content">
-          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
-          <div class="post-meta">
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-            {% if post.tags %}
-              <span class="post-tags">
-                {% for tag in post.tags %}
-                  <span class="tag">{{ tag }}</span>
-                {% endfor %}
-              </span>
-            {% endif %}
-          </div>
-        </div>
-      </article>
-    {% endfor %}
-  </div>
-  <div class="view-all">
-    <a href="/blog" class="view-all-link">View All Posts →</a>
-  </div>
-</section>
+*Building resilient software with a quiet eye on the threat landscape.*
+
+**Product Security Engineer**
+
+I work at the quiet intersection of code and security — where thoughtful design meets unseen defenses.  
+It’s less about locking things down, and more about building software that’s ready for the real world.
+
+---
+
+### Areas of Work
+Exploring the security of anything that computes, connects, or occasionally combusts — from IoT to WTF, firmware to the cloud, and everything in between. Whether it blinks, boots, or just barely functions, I’m usually in there somewhere armed with curiosity, a slightly overworked debugger, and a deep need to ask: “What happens if I do this?” 
+
+---
+
+### Work
+
+<div class="post-list-home">
+{% for post in site.posts limit:3 %}
+  <article class="post-item">
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
+    <p>{{ post.excerpt | strip_html | truncatewords: 35 }}</p>
+  </article>
+{% endfor %}
+</div>
+
+<p style="text-align: center; margin-top: 2rem;"><a href="/blog">View All Posts &rarr;</a></p>
+
+---
+
+## Connect
+
+You can find me on:
+
+**[LinkedIn](https://linkedin.com/in/0nk4r)**   **[GitHub](https://github.com/0nk4r)**   **[Email](mailto:contact@onkark.com)**
 
 <style>
-.hero {
-  text-align: center;
-  padding: 6rem 2rem;
-  background: linear-gradient(to bottom, rgba(23, 71, 52, 0.05), transparent);
-  border-radius: 0 0 2rem 2rem;
-  margin-bottom: 4rem;
+/* Add specific styles for home page elements if needed, 
+   but prefer styles defined in default.html for consistency */
+.post-list-home .post-item {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--code-bg);
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: box-shadow 0.18s, transform 0.18s;
 }
-
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto;
+.post-list-home .post-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
 }
-
-.hero h1 {
-  font-size: 3.5rem;
-  color: var(--primary);
-  margin: 0;
-  font-weight: 800;
-  letter-spacing: -1px;
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  color: var(--accent);
-  margin: 1rem 0;
-  font-weight: 500;
-}
-
-.description {
-  font-size: 1.2rem;
-  color: var(--light-text);
-  max-width: 600px;
-  margin: 1.5rem auto;
-  line-height: 1.6;
-}
-
-.hero-links {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.primary-button, .secondary-button {
-  padding: 0.8rem 2rem;
-  border-radius: 100px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.primary-button {
-  background: var(--primary);
-  color: white;
-}
-
-.secondary-button {
-  background: transparent;
-  color: var(--primary);
-  border: 2px solid var(--primary);
-}
-
-.primary-button:hover, .secondary-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(23, 71, 52, 0.15);
-}
-
-.featured-posts {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.featured-posts h2 {
-  text-align: center;
-  color: var(--primary);
-  font-size: 2rem;
-  margin-bottom: 3rem;
-}
-
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-.post-card {
-  background: white;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.post-card:hover {
+.post-list-home .post-item:hover {
+  box-shadow: 0 6px 24px rgba(0,86,179,0.10);
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(23, 71, 52, 0.12);
 }
-
-.post-content {
-  padding: 1.5rem;
+.post-list-home h3 {
+  margin-top: 0.5em;
+  margin-bottom: 0.2em;
+  font-size: 1.3rem; /* Slightly smaller than H2 */
 }
-
-.post-content h3 {
-  margin: 0 0 1rem 0;
-  font-size: 1.25rem;
-}
-
-.post-content h3 a {
-  color: var(--primary);
+.post-list-home h3 a {
+  color: var(--heading-color);
   text-decoration: none;
 }
-
-.post-excerpt {
-  color: var(--light-text);
-  font-size: 0.95rem;
-  margin: 0 0 1rem 0;
+.post-list-home h3 a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
 }
-
 .post-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.85rem;
-  color: var(--light-text);
-}
-
-.post-tags {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.tag {
-  background: rgba(23, 71, 52, 0.1);
-  color: var(--primary);
-  padding: 0.2rem 0.6rem;
-  border-radius: 100px;
-  font-size: 0.75rem;
-}
-
-.view-all {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.view-all-link {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.view-all-link:hover {
-  color: var(--accent);
-}
-
-@media (max-width: 768px) {
-  .hero {
-    padding: 4rem 1rem;
-  }
-  
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-  
-  .subtitle {
-    font-size: 1.25rem;
-  }
-  
-  .description {
-    font-size: 1.1rem;
-  }
-  
-  .hero-links {
-    flex-direction: column;
-  }
-  
-  .posts-grid {
-    grid-template-columns: 1fr;
-  }
+  font-size: 0.9rem;
+  color: var(--muted-color);
+  margin-bottom: 0.8em;
+  font-family: var(--heading-font); /* Use sans-serif for meta */
 }
 </style>

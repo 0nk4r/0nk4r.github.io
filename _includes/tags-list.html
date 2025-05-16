@@ -9,7 +9,7 @@
   <div class="tags-list">
     {% for tag_pair in tag_words %}
     {% assign tag = tag_pair | split:'|' | last %}
-    <a href="#{{ tag | slugify }}" class="tag-link">
+    <a href="#{{ tag | slugify }}" class="tag-home tag-link">
       <span class="tag-name">{{ tag }}</span>
       <span class="tag-count">{{ site.tags[tag] | size }}</span>
     </a>
@@ -22,7 +22,7 @@
     {% for tag_pair in tag_words %}
     {% assign tag = tag_pair | split:'|' | last %}
     <div id="{{ tag | slugify }}" class="posts-for-tag">
-      <h2>{{ tag }}</h2>
+      <h2 class="tag-section-title">{{ tag }}</h2>
       <ul class="posts-list">
         {% for post in site.tags[tag] %}
           <li>
@@ -39,3 +39,95 @@
     {% endfor %}
   </div>
 </div>
+
+<style>
+.tags-title {
+  color: var(--heading-color);
+  font-size: 2.2rem;
+  font-family: var(--heading-font);
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+.tags-subtitle {
+  font-size: 1.1rem;
+  color: var(--muted-color);
+  margin-bottom: 2.5em;
+  font-family: var(--heading-font);
+}
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7em 1em;
+  margin-bottom: 2.5em;
+}
+.tag-home.tag-link {
+  display: inline-flex;
+  align-items: center;
+  background: #f1f3f5;
+  color: var(--text-color);
+  font-size: 0.78rem;
+  font-family: var(--mono-font);
+  border-radius: 999px;
+  padding: 0.13em 0.9em 0.13em 0.7em;
+  border: none;
+  letter-spacing: 0.01em;
+  vertical-align: middle;
+  text-decoration: none;
+  margin: 0;
+  transition: background 0.2s, color 0.2s;
+}
+.tag-home.tag-link:hover {
+  background: #e2e6ea;
+  color: var(--accent-color);
+}
+.tag-count {
+  background: none;
+  color: var(--muted-color);
+  font-size: 0.75em;
+  margin-left: 0.5em;
+  font-family: var(--heading-font);
+  font-weight: 600;
+}
+.posts-by-tag {
+  margin-top: 3.5em;
+}
+.tag-section-title {
+  font-size: 1.3rem;
+  color: var(--accent-color);
+  margin-bottom: 1.2em;
+  margin-top: 2.5em;
+  font-family: var(--heading-font);
+}
+.posts-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 2.5em;
+}
+.posts-list li {
+  margin-bottom: 1.2em;
+}
+.posts-list h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.2em 0;
+  font-family: var(--heading-font);
+  font-weight: 600;
+}
+.posts-list h3 a {
+  color: var(--heading-color);
+  text-decoration: none;
+}
+.posts-list h3 a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+.posts-list small {
+  color: var(--muted-color);
+  font-size: 0.92em;
+  margin-left: 0.5em;
+}
+@media (max-width: 700px) {
+  .tags-title { font-size: 1.3rem; }
+  .tags-list { gap: 0.5em 0.5em; }
+  .tag-section-title { font-size: 1.05rem; }
+}
+</style>
