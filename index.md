@@ -3,19 +3,19 @@ layout: default
 title: Home
 ---
 
-## Onkar Koli
+<div style="text-align:center; margin-bottom: 1.5rem;">
+  <img src="/assets/profile.jpg" alt="Onkar Koli" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border: 2px solid var(--border-color); margin-top: 1.2rem;">
+</div>
 
-*Building resilient software with a quiet eye on the threat landscape.*
+*Product Security Engineer*
 
-**Product Security Engineer**
-
-I work at the quiet intersection of code and security — where thoughtful design meets unseen defenses.  
-It’s less about locking things down, and more about building software that’s ready for the real world.
+Learning how machines work ! 
 
 ---
 
 ### Areas of Work
-Exploring the security of anything that computes, connects, or occasionally combusts — from IoT to WTF, firmware to the cloud, and everything in between. Whether it blinks, boots, or just barely functions, I’m usually in there somewhere armed with curiosity, a slightly overworked debugger, and a deep need to ask: “What happens if I do this?” 
+
+Exploring the security of anything that computes, connects, or occasionally combusts — from IoT to WTF, firmware to the cloud, and everything in between. Whether it blinks, boots, or just barely functions, I'm usually in there somewhere armed with curiosity, a slightly overworked debugger, and a deep need to ask: "What happens if I do this?" 
 
 ---
 
@@ -42,8 +42,6 @@ You can find me on:
 **[LinkedIn](https://linkedin.com/in/0nk4r)**   **[GitHub](https://github.com/0nk4r)**   **[Email](mailto:contact@onkark.com)**
 
 <style>
-/* Add specific styles for home page elements if needed, 
-   but prefer styles defined in default.html for consistency */
 .post-list-home .post-item {
   margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
